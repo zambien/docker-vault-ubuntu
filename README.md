@@ -10,5 +10,5 @@ In some cases you might not want to use Alpine.  For example:
 
 Generally speaking, you should be able to use this by following the hashicorp docs here: https://github.com/hashicorp/docker-vault
 
-Note, only release (not beta or RC) Vault versions 0.11.6 and higher are available.
+Note, prior to 1.2.0-beta2 only release (not beta or RC) Vault versions 0.11.6 and higher are available.
 
