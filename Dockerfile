@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ADD VERSION .
+
 # This is the release of Vault to pull in.
 ARG VAULT_VERSION=0.11.6
 
