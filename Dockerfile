@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
+# This is the release of Vault to pull in.
 ADD VERSION .
 
-# This is the release of Vault to pull in.
 ARG VAULT_VERSION=0.11.6
 
 RUN apt update && apt upgrade \
@@ -32,6 +32,7 @@ RUN useradd -ms /bin/bash vault \
     done; \
     test -z "$found" && echo >&2 "error: failed to fetch GPG key $VAULT_GPGKEY" && exit 1; \
     mkdir -p /tmp/build && \
+    cat VERSION && export VAULT_VERSION=`cat VERSION` && \
     cd /tmp/build && \
     wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_${ARCH}.zip && \
     wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS && \
