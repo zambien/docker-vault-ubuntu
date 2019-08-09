@@ -5,7 +5,7 @@ ADD VERSION .
 
 ARG VAULT_VERSION=0.11.6
 
-RUN apt update && apt upgrade \
+RUN apt update && apt -y upgrade \
     && apt install -y gnupg wget unzip \
     && rm -rf /var/lib/apt/lists/*
 
